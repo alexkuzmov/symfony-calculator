@@ -1,0 +1,59 @@
+.wrapper {
+    margin: 0 auto;
+    width: 720px;
+    border: 3px solid #ddd;
+}
+
+.valueInput {
+    width: 100%;
+    float: left;
+    clear: both;
+    margin-bottom: 20px;
+}
+
+.valueInput label {
+    width: calc(50% - 22px);
+    display: inline-block;
+    float: left;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.valueInput input {
+    width: calc(50% - 22px);
+    display: inline-block;
+    float: right;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.valueInput select {
+    width: calc(50% + 1px);
+    display: inline-block;
+    float: right;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.calculateButton {
+    width: 100%;
+    float: left;
+    clear: both;
+    margin-bottom: 20px;
+}
+
+.calculateButton input {
+    display: inline-block;
+    float: right;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.result {
+    width: 100%;
+    clear: both;
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+}

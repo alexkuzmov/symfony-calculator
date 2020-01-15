@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Calculator App</title>
+        
+        <link rel="preload" type="text/css" href="/css/main.css" as="style" media="all" />
+        <link rel="stylesheet" type="text/css" href="/css/main.css" media="all" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <form method="POST" action="/" >
+                <div class="valueInput">
+                    <label>Value 1</label>
+                    
+                    <input type="text" name="value1" value="{{post.value1|default('')}}" onkeyup="filterNumbers(this)" />
+                </div>
+                <div class="valueInput">
+                    <label>Operator</label>
+                    
+                    <select name="operator" data-selected="{{post.operator|default('')}}">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                </div>
+                <div class="valueInput">
+                    <label>Value 2</label>
+                    
+                    <input type="text" name="value2" value="{{post.value2|default('')}}" onkeyup="filterNumbers(this)" />
+                </div>
+                <div class="calculateButton">
+                    <input type="submit" value="Calculate" />
+                </div>
+            </form>
+            
+            <div class="result">
+                {{result|default('')}}
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script defer type="text/javascript" src="/js/main.js"></script>
+    </body>
+</html>
