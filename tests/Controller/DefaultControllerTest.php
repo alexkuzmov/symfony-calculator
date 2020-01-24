@@ -54,7 +54,7 @@ class DefaultControllerTest extends WebTestCase
             $crawler = $client->submit($form);
             
             // Verify results
-            $this->assertEquals(-2, $crawler->filter('div.result')->text(), "Addition calculation is incorrect: [" . $crawler->filter('div.result')->text() . "]");
+            $this->assertEquals(-2, $crawler->filter('div.result')->text(), "Substraction calculation is incorrect: [" . $crawler->filter('div.result')->text() . "]");
             
             /* TEST SUBSTRACTION */
 
@@ -70,7 +70,7 @@ class DefaultControllerTest extends WebTestCase
             $crawler = $client->submit($form);
             
             // Verify results
-            $this->assertEquals(3, $crawler->filter('div.result')->text(), "Addition calculation is incorrect: [" . $crawler->filter('div.result')->text() . "]");
+            $this->assertEquals(3, $crawler->filter('div.result')->text(), "Multiplication calculation is incorrect: [" . $crawler->filter('div.result')->text() . "]");
             
             /* TEST MULTIPLICATION */
             
@@ -86,7 +86,7 @@ class DefaultControllerTest extends WebTestCase
             $crawler = $client->submit($form);
             
             // Verify results
-            $this->assertEquals(1/3, $crawler->filter('div.result')->text(), "Addition calculation is incorrect: [" . $crawler->filter('div.result')->text() . "]");
+            $this->assertEquals(1/3, $crawler->filter('div.result')->text(), "Division calculation is incorrect: [" . $crawler->filter('div.result')->text() . "]");
             
             /* TEST DIVISION */
         }
