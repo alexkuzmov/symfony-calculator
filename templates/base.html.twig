@@ -31,13 +31,11 @@
                     <input type="text" name="value2" value="{{post.value2|default('')}}" onkeyup="filterNumbers(this)" />
                 </div>
                 <div class="calculateButton">
-                    <input type="submit" value="Calculate" />
+                    <button type="submit">Calculate</button>
                 </div>
             </form>
             
-            <div class="result">
-                {{result|default('')}}
-            </div>
+            <div class="result">{{result|default('')}}</div>
         </div>
         
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

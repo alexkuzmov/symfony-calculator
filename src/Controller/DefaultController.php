@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends AbstractController
 {
@@ -13,30 +14,33 @@ class DefaultController extends AbstractController
         '/' => 'division',
     ];
     
-    public function index()
+    public function index(Request $request)
     {
         $templateParams = [];
         
-        if (strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
-            $templateParams['post'] = $_POST;
+        if ($request->getMethod() == 'POST') {
+            
+            $input = $request->request->all();
+            
+            $templateParams['post'] = $input;
             $result = 0;
             
-            switch (self::$operators[$_POST['operator']]) {
+            switch (self::$operators[$input['operator']]) {
                 case 'subtraction':
-                    $result = (float)$_POST['value1'] - (float)$_POST['value2'];
+                    $result = (float)$input['value1'] - (float)$input['value2'];
                     break;
                 
                 case 'multiplication':
-                    $result = (float)$_POST['value1'] * (float)$_POST['value2'];
+                    $result = (float)$input['value1'] * (float)$input['value2'];
                     break;
                 
                 case 'division':
-                    $result = (float)$_POST['value1'] / (float)$_POST['value2'];
+                    $result = (float)$input['value1'] / (float)$input['value2'];
                     break;
                 
                 case 'addition':
                 default:
-                    $result = (float)$_POST['value1'] + (float)$_POST['value2'];
+                    $result = (float)$input['value1'] + (float)$input['value2'];
                     break;
             }
             
